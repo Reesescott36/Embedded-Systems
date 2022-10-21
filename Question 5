@@ -1,0 +1,31 @@
+mov.w #0524h,R4
+			mov.w #0623h,R5
+			cmp R4,R5
+			jl less
+			jge goe
+			jmp $;
+
+goe:
+			jeq equal
+			call #greater
+
+less:
+			mov.w #000Ah, &2000h
+			mov.w #0009h, &2002h
+			mov.w #0008h, &2004h
+			mov.w #0007h, &2006h
+			mov.w #0006h, &2008h
+
+			sub #1h,R4
+
+equal:
+			jmp $
+
+greater:
+			mov.w #0001h, &2000h
+			mov.w #0002h, &2002h
+			mov.w #0003h, &2004h
+			mov.w #0004h, &2006h
+			mov.w #0005h, &2008h
+
+			sub #1h,R4
