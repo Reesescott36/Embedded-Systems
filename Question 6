@@ -1,0 +1,14 @@
+mov.w #2D97h,R4
+ 			mov.w #6239h,R5
+ 			mov.w #6344h,R6
+ 			jmp function
+
+
+function:
+ 			mov.w R5,R8
+ 			mov.w R6,R7
+			and R4,R8
+ 			bis R8,R7
+ 			mov.w R7,&203Ch
+
+ 			ret
